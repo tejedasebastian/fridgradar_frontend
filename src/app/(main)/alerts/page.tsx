@@ -209,7 +209,7 @@ export default function AlertsPage() {
                         </span>
                         {alert.type && (
                           <span className="text-[10px] font-medium uppercase tracking-wider rounded-full px-1.5 py-0.5 bg-muted text-muted-foreground">
-                            {t(`alerts.types.${alert.type}` as any) || alert.type}
+                            {t(`alerts.types.${alert.type}`) || alert.type}
                           </span>
                         )}
                       </div>

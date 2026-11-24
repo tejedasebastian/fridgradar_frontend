@@ -22,7 +22,7 @@ export type Translator = (
 export function formatCategory(category: string | null | undefined, t: Translator): string {
   if (!category) return "";
   const slug = category.replace(/\s+/g, "_");
-  const translated = t(`category_${slug}` as any);
+  const translated = t(`category_${slug}`);
   // If the key is missing, the i18n helper returns the key string. Detect
   // that and fall back to the raw category so we never show "category_X".
   if (translated.startsWith("category_")) return category;

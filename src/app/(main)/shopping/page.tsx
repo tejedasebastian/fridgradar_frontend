@@ -54,7 +54,7 @@ function UnitSelect({
         className="w-full h-9 appearance-none rounded-md border border-input bg-background pl-2 pr-7 text-sm focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 outline-none cursor-pointer"
       >
         {UNITS.map((u) => (
-          <option key={u} value={u}>{t(`inventory.unit_${u}` as any) || u}</option>
+          <option key={u} value={u}>{t(`inventory.unit_${u}`) || u}</option>
         ))}
       </select>
       <ChevronDown
@@ -400,7 +400,7 @@ function QuickAddCard({
                             <div className="flex-1 min-w-0">
                               <p className="truncate font-medium">{s.name}</p>
                               <p className="text-[11px] text-muted-foreground">
-                                {formatCategory(s.category, t)} · {t(`inventory.unit_${s.unit}` as any) || s.unit}
+                                {formatCategory(s.category, t)} · {t(`inventory.unit_${s.unit}`) || s.unit}
                               </p>
                             </div>
                           </button>
@@ -639,7 +639,7 @@ function ShoppingRow({ item, onToggle, onDelete, onEdit }: ShoppingRowProps) {
             {(item.quantity || item.unit) && (
               <span className="inline-flex items-center tabular-nums leading-none">
                 {item.quantity ?? "—"}
-                {item.unit ? ` ${t(`inventory.unit_${item.unit}` as any) || item.unit}` : ""}
+                {item.unit ? ` ${t(`inventory.unit_${item.unit}`) || item.unit}` : ""}
               </span>
             )}
           </div>

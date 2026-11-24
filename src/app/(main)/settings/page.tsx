@@ -143,7 +143,7 @@ export default function SettingsPage() {
                     className="size-5 rounded-full ring-2 ring-background"
                     style={{ backgroundColor: preset.primary }}
                   />
-                  {t(`settings.theme_presets.${key}` as any)}
+                  {t(`settings.theme_presets.${key}`)}
                 </button>
               ))}
             </div>

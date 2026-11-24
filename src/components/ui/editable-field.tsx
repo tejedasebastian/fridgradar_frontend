@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Pencil, Check, X, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -57,9 +57,9 @@ export function EditableField({
 
   // Sync draft -> value when not editing. We bump a `draftKey` so the input
   // remounts with the fresh value; this avoids `useEffect` + setState.
-  const prevValue = useRef(value);
-  if (!editing && prevValue.current !== value) {
-    prevValue.current = value;
+  const [prevValue, setPrevValue] = useState(value);
+  if (!editing && prevValue !== value) {
+    setPrevValue(value);
     setDraft(value);
     setDraftKey((k) => k + 1);
     setError(null);
